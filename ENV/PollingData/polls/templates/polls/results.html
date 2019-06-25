@@ -1,0 +1,11 @@
+<h1>{{ question.question_text }}</h1>
+<h3>Total Polled: {{question.total_polled}}
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.percentage }}%</li>
+{% endfor %}
+</ul>
+
+<center><a href="{% url 'polls:index' question.category %}">Back</a></center>
+<br>
+<center><a href="{% url 'polls:main' %}">Home</a></center>

@@ -1,0 +1,14 @@
+{% if category_list %}
+    <ul>
+    <b><a href="{% url 'polls:index' category_list.0.category %}">{{category_list.0.category}}</a></b>
+    <br>
+    Historical New York polling data regarding political leanings
+    <br>
+    <br>
+	<b><a href="{% url 'polls:index' category_list.1.category %}">{{category_list.1.category}}</a></b>
+	<br>
+    Most recent polls from HuffPost Pollster
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
